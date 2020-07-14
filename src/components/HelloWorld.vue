@@ -1,0 +1,55 @@
+<template>
+  <div>
+    {{ msg | uppercaseFirst }}
+    <div>{{ arr | locals }}</div>
+    <my-common>
+      <div>{{ arr | arrs }}</div>
+      <div>这是slot</div>
+    </my-common>
+    <router-link :to="{ path: '/request', query: { name: 'yangxiaoning' } }"
+      >跳转到请求界面</router-link
+    >
+
+    <el-button type="primary" @click="show = true">弹框</el-button>
+    <el-dialog width="40%" title="温馨提示" :visible.sync="show">
+      <span>这是一段对话的提示信息</span>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="show = false">取 消</el-button>
+        <el-button type="primary" @click="show = false">确 定</el-button>
+      </span>
+    </el-dialog>
+    <el-button v-order>这是自定义指令</el-button>
+  </div>
+</template>
+
+<script>
+import { mapState, mapGetters } from "vuex";
+import meths from "../commonMethods/commonJs";
+export default {
+  name: "HelloWorld",
+  data() {
+    return {
+      msg: "Welcome to Your Vue.js App",
+      arr: "zhis is dog",
+      world: "这是helloWorld的数据",
+      show: false,
+      sendData: "这是兄弟组件之间的传值"
+    };
+  },
+  computed: {},
+  directives: {
+    order: {
+      bind(el, binding) {
+        return (el.style.color = "#e4393c");
+      }
+    }
+  },
+  mounted() {
+    this.comMethods.commo();
+    //这是vuex的兄弟组件传值
+    this.$store.state.hello = this.sendData;
+  }
+};
+</script>
+
+<style scoped></style>
