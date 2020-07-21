@@ -8,13 +8,8 @@ Vue.use(elementUi)
 //引入数据管理状态
 import store from './store/store'
 //设置公共引用接口地址
-import https from './http/connectUrl'
+import https from './http/httpSend'
 Vue.prototype.httpsUrl=https;
-//引入request请求协议
-import axios from 'axios'
-import qs from 'qs'
-Vue.prototype.$http = axios;
-Vue.prototype.$qs = qs;
 //引入过滤器
 import filters from './filters/filter'
 Object.keys(filters).forEach(key => {

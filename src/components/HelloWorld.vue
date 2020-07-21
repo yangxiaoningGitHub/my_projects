@@ -6,10 +6,7 @@
       <div>{{ arr | arrs }}</div>
       <div>这是slot</div>
     </my-common>
-    <router-link :to="{ path: '/request', query: { name: 'yangxiaoning' } }"
-      >跳转到请求界面</router-link
-    >
-
+    <router-link :to="{ path: '/request', query: { name: 'yangxiaoning' } }">跳转到请求界面</router-link>
     <el-button type="primary" @click="show = true">弹框</el-button>
     <el-dialog width="40%" title="温馨提示" :visible.sync="show">
       <span>这是一段对话的提示信息</span>
@@ -19,12 +16,19 @@
       </span>
     </el-dialog>
     <el-button v-order>这是自定义指令</el-button>
+
+    <br/>
+    <br/>
+    <label for="relation">请选择：{{select}}</label>
+    <input id="relation" type="checkbox" v-model="select">
+    <label for="rlas">请选择：您已经选中{{radi}}</label>
+    <input type="radio" v-model="radi" value="1" id="rlas">
+    <input type="radio" v-model="radi" id="rlas" value="2">
   </div>
 </template>
 
 <script>
-import { mapState, mapGetters } from "vuex";
-import meths from "../commonMethods/commonJs";
+import { mapState, mapGetters, mapActions } from "vuex";
 export default {
   name: "HelloWorld",
   data() {
@@ -33,7 +37,9 @@ export default {
       arr: "zhis is dog",
       world: "这是helloWorld的数据",
       show: false,
-      sendData: "这是兄弟组件之间的传值"
+      sendData: "这是兄弟组件之间的传值",
+      select:false,
+      radi:''
     };
   },
   computed: {},
@@ -45,9 +51,13 @@ export default {
     }
   },
   mounted() {
+    //公共
     this.comMethods.commo();
     //这是vuex的兄弟组件传值
     this.$store.state.hello = this.sendData;
+  },
+  methods:{
+
   }
 };
 </script>

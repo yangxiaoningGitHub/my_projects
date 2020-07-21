@@ -25,12 +25,8 @@
         mdf:'我是request的内容'
       }
     },
-    created(){
-        this.btn();
-    },
     mounted() {
       this.val = this.$route.query.name;
-      this.btn()
     },
     computed: {
       ...mapState({
@@ -45,21 +41,7 @@
       //mapActions
       ...mapActions({
         add: 'incrent'
-      }),
-      gets() {
-        this.$http({
-          type: 'POST',
-          url: this.httpsUrl.urls.first,
-          data: this.$qs.stringify({
-            code: "1234",
-            name: "yyyy"
-          })
-        }).then((response) => {
-          console.log(response)
-        }).catch((err) => {
-          console.log(err)
-        })
-      }
+      })
     }
   }
 </script>

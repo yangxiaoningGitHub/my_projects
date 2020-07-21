@@ -8,7 +8,8 @@ export default new Vuex.Store({
   state: {
     users: 'wanglinna',
     age: 30,
-    hello:''
+    hello:'',
+    token:''
   },
   //属性值初始化  增删改擦定义的属性值
   getters: {

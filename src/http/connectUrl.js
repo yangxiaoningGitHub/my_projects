@@ -1,14 +1,12 @@
 //链接的服务
 const ipconfig={
-  service:'https://www.baidu.com'
+  service:'https://uniapp-interface.herokuapp.com/'
 }
 //接口地址
 const urls={
-  first:ipconfig.service+'/constract/add/queryList'
+  first:ipconfig.service+'api/profiles/mall_list'
 }
-//配置拦截器
-
 export default {
-  urls,
-  ipconfig
+  ipconfig,
+  urls
 }
