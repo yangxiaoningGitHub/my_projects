@@ -9,7 +9,7 @@ export default new Vuex.Store({
     users: 'wanglinna',
     age: 30,
     hello:'',
-    token:''
+    token:'dgd9sf98dgdg8d9d0g9d0g9d0gdd9gd0g9'
   },
   //属性值初始化  增删改擦定义的属性值
   getters: {

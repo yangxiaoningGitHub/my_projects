@@ -1,12 +1,11 @@
-import connectUrl from './connectUrl';
-import requestHtpp from  './requestHttp';
-
-const requestUrl={
-  ajaxFirst(data){
-    return requestHtpp.httpPost(connectUrl.urls.first,data)
+import https from './requestHttp';
+import httpUrl from  './connectUrl';
+const methods = {
+  requestMeth(data){
+    return  https.httpGet(httpUrl.urls.first, data)
   }
 }
 
-export default {
-  requestUrl
+export default{
+  methods
 }

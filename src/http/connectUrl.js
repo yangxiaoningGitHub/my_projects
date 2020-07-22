@@ -1,12 +1,9 @@
-//链接的服务
-const ipconfig={
-  service:'https://uniapp-interface.herokuapp.com/'
-}
+let url='https://uniapp-interface.herokuapp.com/';
 //接口地址
 const urls={
-  first:ipconfig.service+'api/profiles/mall_list'
+  first:url+'api/profiles/mall_list',//商品分类接口
+  second:url+'api/goodsList/agssfkj/monList'//详细商品列表
 }
 export default {
-  ipconfig,
   urls
 }

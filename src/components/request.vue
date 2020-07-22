@@ -21,8 +21,8 @@
         request: '这是请求界面',
         moreData: '更多数据',
         val: '',
-        me:'yangxiaoning',
-        mdf:'我是request的内容'
+        me: 'yangxiaoning',
+        mdf: '我是request的内容'
       }
     },
     mounted() {
@@ -31,7 +31,7 @@
     computed: {
       ...mapState({
         values: state => state.users,
-        helloWorld:state=>state.hello
+        helloWorld: state => state.hello
       }),
       ...mapGetters([
         'getData'
@@ -41,7 +41,13 @@
       //mapActions
       ...mapActions({
         add: 'incrent'
-      })
+      }),
+      gets() {
+        console.log(43546546)
+        this.$http.methods.requestMeth().then(res=>{
+          console.log(res)
+        })
+      }
     }
   }
 </script>
