@@ -26,7 +26,7 @@
       }
     },
     mounted() {
-      this.val = this.$route.query.name;
+      this.val = this.$route.params.name;
     },
     computed: {
       ...mapState({

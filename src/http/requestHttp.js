@@ -44,7 +44,7 @@ axios.interceptors.response.use(response => {
     return Promise.reject(error)
   }
 )
-//设置post情感求方法
+//设置Get请求方法
 export function httpGet(url, params) {
   return new Promise((resolve, reject) => {
     axios.get(url, params).then(response => {

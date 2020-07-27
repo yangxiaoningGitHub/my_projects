@@ -22,6 +22,7 @@ Vue.prototype.comMethods = meths;
 //引入请求数据方法
 import apiAddress from "./http/httpSend";
 Vue.prototype.$http = apiAddress
+
 Vue.config.productionTip = false;
 new Vue({
   el: '#app',
